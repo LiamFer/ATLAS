@@ -7,11 +7,17 @@
   width: 100%;
   background-image: url(../images/home.jpg);
   background-size: cover;
+  border-bottom: 4px white solid;
 }
 
 #box {
   width: 700px;
   animation: slide-in-elliptic-top-fwd 2s;
+}
+
+#main_box:hover span {
+  color: #23c483;
+  transition: ease-in-out 0.2s;
 }
 
 #main_box {
@@ -29,6 +35,7 @@
 #textbox h1 {
   font-size: 50px;
   color: white;
+  font-family: "Century Gothic", monospace;
 }
 
 /* CSS */
@@ -59,6 +66,7 @@
   transform: translateY(-1px);
 }
 
+/* Animações de entrada */
 @-webkit-keyframes slide-in-elliptic-top-fwd {
   0% {
     -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
@@ -89,5 +97,44 @@
     -webkit-transform-origin: 50% 1400px;
     transform-origin: 50% 1400px;
     opacity: 1;
+  }
+}
+
+/* Versão mobile do menu */
+@media screen and (max-width: 769px) {
+  #box_atropos {
+    background-size: cover;
+    background-position: center;
+  }
+  #box {
+    width: 400px;
+  }
+  #main_box {
+    gap: 50px;
+    height: 350px;
+  }
+  #textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-around;
+  }
+  #textbox h1 {
+    font-size: 30px;
+    color: white;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #box {
+    width: 300px;
+  }
+  #textbox {
+    gap: 20px;
+  }
+  #textbox h1 {
+    font-size: 20px;
   }
 }

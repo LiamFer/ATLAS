@@ -21,7 +21,7 @@ function Landing() {
                 Explore the Possibilities
               </h1>
               <h1 data-atropos-offset="5" data-atropos-opacity="0.5;1">
-                Of Reading with ATLAS
+                Of Reading with <span>ATLAS</span>
               </h1>
             </div>
             <button class="button-green" data-atropos-offset="6">

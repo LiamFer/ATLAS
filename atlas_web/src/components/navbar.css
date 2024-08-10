@@ -2,7 +2,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 80px;
+  padding: 0px 80px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,6 +34,34 @@ nav {
   color: #ffffff;
   font-size: 20px;
   font-weight: 800;
+  animation: tracking-in-contract 0.8s;
+}
+
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
 }
 
 /* Animação dos textos do Header */
@@ -84,20 +112,24 @@ nav {
     align-items: center;
     justify-content: flex-start;
     position: fixed;
-    top: 70px;
+    top: 50px;
     right: -300px;
     width: 300px;
     height: 100vh;
-    background-color: rgba(31, 31, 31, 0.5);
     transition: 0.05s ease-in-out;
-    backdrop-filter: blur(10px);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
   }
-
   #navbar.expand {
     right: 0px;
   }
-
   #mobile-menu {
     display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  nav {
+    padding: 0px 20px;
   }
 }
