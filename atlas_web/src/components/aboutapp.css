@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
   height: 100vh;
   min-height: 900px;
   width: 100%;
@@ -11,13 +12,96 @@
   font-family: "Century Gothic", monospace;
 }
 
-#slider {
-  width: 80%;
-  height: 500px;
-  background-color: azure;
+#container h1 {
+  text-transform: uppercase;
+}
+
+#infosbox {
+  width: 1000px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#textbox {
+  width: 890px;
+  font-size: 25px;
 }
 
 .infocard {
-  background-color: aqua;
-  height: 100%;
+  background-color: #21242a;
+  padding: 20px;
+  border-radius: 20px;
+  width: 310px;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.infocard::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(45deg, #23c483, #1fd81f, #23c483, #1fd81f);
+  background-size: 400% 400%;
+  border-radius: 20px;
+  z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 0;
+  animation: rotate-border 3s linear infinite;
+}
+
+.infocard:hover::before {
+  opacity: 1;
+}
+
+@keyframes rotate-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.infocard img {
+  background-color: rgb(59, 207, 22);
+  padding: 10px;
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+}
+
+.filtercolor {
+  filter: invert(98%) sepia(6%) saturate(30%) hue-rotate(197deg)
+    brightness(106%) contrast(99%);
+}
+
+.infotext {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
+}
+
+.infotext h2 {
+  font-size: 19px;
+}
+.infotext p {
+  font-size: 15px;
 }

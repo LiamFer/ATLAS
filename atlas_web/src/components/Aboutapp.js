@@ -1,22 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  FreeMode,
-  A11y,
-  EffectFade,
-} from "swiper/modules";
+import { infosData } from "../constants";
 import "./aboutapp.css";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/effect-fade";
-
 function Aboutapp() {
-  const slides = [<div>TESTE</div>, <div>OUTRO</div>];
   return (
     <>
       <div id="container">
@@ -29,34 +14,20 @@ function Aboutapp() {
           books across genres, from classic literature to the latest
           bestsellers, all in one place.
         </div>
-
-        <Swiper
-          id="slider"
-          breakpoints={{
-            769: { slidesPerView: 3, spaceBetween: 15 },
-            400: { slidesPerView: 2, spaceBetween: 15 },
-          }}
-          modules={[FreeMode, EffectFade]}
-
-        >
-          <SwiperSlide>
-            <div className="infocard"></div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="infocard"></div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="infocard"></div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="infocard"></div>
-          </SwiperSlide>
-        </Swiper>
+        <div id="infosbox">
+          {infosData.map((item) => (
+            <div className="infocard">
+              <img className="filtercolor" src={item.icon}></img>
+              <div className="infotext">
+                <h2>{item.title}</h2>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
 }
+
 export default Aboutapp;
