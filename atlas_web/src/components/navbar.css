@@ -7,6 +7,11 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1000;
+  background: transparent; /* Fundo transparente quando no topo */
+  transition: background 0.3s ease;
+}
+
+nav.scrolled {
   background: rgba(134, 134, 134, 0.5); /* Fundo semi-transparente */
   background: linear-gradient(
     to bottom,

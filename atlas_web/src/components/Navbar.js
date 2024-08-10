@@ -1,17 +1,31 @@
 import "./navbar.css";
-import { Component, useState } from "react";
+import { Component } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 
 class Navbar extends Component {
-  state = { clicked: false };
+  state = { clicked: false, scrolled: false };
+
   handleClick = () => {
     this.setState({ clicked: !this.state.clicked });
   };
 
+  handleScroll = () => {
+    const isScrolled = window.scrollY > 0;
+    this.setState({ scrolled: isScrolled });
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   render() {
     return (
       <>
-        <nav>
+        <nav className={this.state.scrolled ? "scrolled" : ""}>
           <a id="logo" href="index.html">
             ATLAS
           </a>
@@ -43,4 +57,5 @@ class Navbar extends Component {
     );
   }
 }
+
 export default Navbar;
