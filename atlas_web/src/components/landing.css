@@ -4,6 +4,7 @@
   flex-direction: row;
   justify-content: center;
   height: 100vh;
+  min-height: 900px;
   width: 100%;
   background-image: url(../images/home.jpg);
   background-size: cover;

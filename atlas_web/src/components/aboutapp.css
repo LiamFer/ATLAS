@@ -1,0 +1,23 @@
+#container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  min-height: 900px;
+  width: 100%;
+  border-bottom: 4px white solid;
+  color: white;
+  font-family: "Century Gothic", monospace;
+}
+
+#slider {
+  width: 80%;
+  height: 500px;
+  background-color: azure;
+}
+
+.infocard {
+  background-color: aqua;
+  height: 100%;
+}
