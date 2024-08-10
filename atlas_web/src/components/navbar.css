@@ -2,9 +2,19 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(134, 134, 134);
-  padding: 20px 80px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.253);
+  padding: 10px 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(134, 134, 134, 0.5); /* Fundo semi-transparente */
+  background: linear-gradient(
+    to bottom,
+    rgba(134, 134, 134, 0.5) 0%,
+    rgba(134, 134, 134, 0.3) 50%,
+    rgba(134, 134, 134, 0) 100%
+  ); /* Degradê para a transição de opacidade */
+  backdrop-filter: blur(10px); /* Aplica o efeito de blur */
 }
 
 #navbar {
@@ -51,6 +61,7 @@ nav {
   position: absolute;
   background-color: #ffffff;
 }
+
 .nav-link-grow-up::before {
   height: 0%;
   width: 100%;
@@ -73,11 +84,17 @@ nav {
     align-items: center;
     justify-content: flex-start;
     position: fixed;
-    top: 90px;
-    right: 0px;
-    width: 100vw;
+    top: 70px;
+    right: -300px;
+    width: 300px;
     height: 100vh;
-    background-color: rgba(31, 31, 31, 0.507);
+    background-color: rgba(31, 31, 31, 0.5);
+    transition: 0.05s ease-in-out;
+    backdrop-filter: blur(10px);
+  }
+
+  #navbar.expand {
+    right: 0px;
   }
 
   #mobile-menu {
