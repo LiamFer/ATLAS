@@ -6,10 +6,8 @@
 }
 
 body {
-  background-image: url(../images/home.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
   height: 300vh;
+  background-color: #2d3748;
 }
 
 .App {

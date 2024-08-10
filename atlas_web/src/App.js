@@ -1,9 +1,11 @@
 import Navbar from "./components/Navbar";
-function App() {
+import Landing from "./components/Landing";
 
+function App() {
   return (
     <div className="App">
       <Navbar />
+      <Landing />
     </div>
   );
 }
