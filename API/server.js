@@ -1,4 +1,3 @@
-//REST API demo in Node.js
 var express = require('express');
 var app = express();
 var fs = require('fs');
