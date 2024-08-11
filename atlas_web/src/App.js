@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 import Aboutapp from "./components/Aboutapp";
 import Ourbooks from "./components/Ourbooks";
+import Download from "./components/Download";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Landing />
       <Aboutapp />
       <Ourbooks />
+      <Download />
     </div>
   );
 }
