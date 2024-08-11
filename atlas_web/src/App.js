@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
+import Landing from "./components/landing";
 import Aboutapp from "./components/Aboutapp";
 import Ourbooks from "./components/Ourbooks";
 import Download from "./components/Download";
