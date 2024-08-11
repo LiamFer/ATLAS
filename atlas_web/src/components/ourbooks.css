@@ -20,26 +20,23 @@
 }
 
 @keyframes flicker {
-    
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa,
-      0 0 80px #0fa,
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
-  
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
+      0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
   }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-  }    
-}
 
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
 
 #booksbox {
   display: flex;
@@ -53,4 +50,69 @@
 .book-cover {
   height: 430px;
   width: 300px;
+}
+
+.mySwiper2 {
+  height: 500px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.swiper2 {
+  width: 100%;
+  padding-top: 50px;
+  background-color: rgba(0, 255, 170, 0);
+  padding-bottom: 50px;
+}
+
+.swiper-slide2 {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.swiper-slide2 img {
+  display: block;
+  box-shadow: 0px;
+  width: 100%;
+}
+
+.swiper-slide-active2 {
+  background-color: none;
+  box-shadow: none;
+}
+
+.swiper-slide2:not(.swiper-slide-active2) {
+  background: none;
+  animation: none;
+  box-shadow: none;
+}
+
+.swiper-slide2 {
+  background-color: #21242a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* PC onde o Swiper some*/
+@media screen and (min-width: 900px) {
+  #booksswiper {
+    display: none;
+  }
+}
+
+/* Mobile onde o Swiper aparece */
+@media screen and (max-width: 900px) {
+  #booksbox {
+    display: none;
+  }
+  #bookssection {
+    min-height: 900px;
+  }
 }
