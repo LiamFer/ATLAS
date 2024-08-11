@@ -3,6 +3,7 @@ import Landing from "./components/Landing";
 import Aboutapp from "./components/Aboutapp";
 import Ourbooks from "./components/Ourbooks";
 import Download from "./components/Download";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Aboutapp />
       <Ourbooks />
       <Download />
+      <Footer />
     </div>
   );
 }

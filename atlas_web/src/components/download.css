@@ -1,17 +1,16 @@
 #app-section {
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   height: 100vh;
   min-height: 900px;
   width: 100%;
-  gap: 10px 280px;
+  gap: 80px;
   background-image: url(https://64.media.tumblr.com/e6ea224143f7a0fc5f2f5648e7ea8abe/tumblr_os68iuswWY1uob8tfo1_540.gif);
   background-size: cover;
   background-position: right;
   border-bottom: 4px white solid;
-  flex-wrap: wrap;
 }
 
 #blurred {
@@ -50,9 +49,55 @@
   color: rgb(92, 92, 92);
 }
 
+#pagetitle {
+  font-weight: bold;
+  z-index: 1;
+  color: white;
+  font-size: 50px;
+}
+
+#downloadboxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+@media screen and (max-width: 1300px) {
+  #app-section {
+    gap: 20px;
+  }
+
+  .download-box {
+    width: 420px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .download-box img {
+    width: 380px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  #pagetitle {
+    font-size: 35px;
+  }
+
+  #downloadboxes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   #app-section {
     gap: 10px;
+    justify-content: space-around;
   }
 
   .download-box {
@@ -66,4 +111,18 @@
     height: 200px;
     object-fit: cover;
   }
+
+  #pagetitle {
+    font-size: 30px;
+  }
+
+  #downloadboxes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+  }
 }
+
+
