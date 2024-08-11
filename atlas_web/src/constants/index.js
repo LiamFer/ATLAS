@@ -30,3 +30,22 @@ export const infosData = [
     desc: "Share your Atlas account with family members. Each profile gets personalized reading lists and recommendations.",
   },
 ];
+
+
+// Função para selecionar n ISBNs aleatórios do array
+const isbnArray = [
+"https://m.media-amazon.com/images/I/91TyM++E3bL._SY466_.jpg",
+"https://m.media-amazon.com/images/I/71pntgWqUDL._SY466_.jpg",
+"https://m.media-amazon.com/images/I/71oJNlDX0IL._SY466_.jpg",
+"https://m.media-amazon.com/images/I/811r2YM87AL._SY466_.jpg",
+"https://m.media-amazon.com/images/I/812b+Dv8pvL._SY466_.jpg",
+"https://m.media-amazon.com/images/I/71wdbq8NbFL._SY466_.jpg"];
+
+
+function getRandomISBNs(count) {
+    const shuffled = isbnArray.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
+export const bookCovers = getRandomISBNs(6);
+

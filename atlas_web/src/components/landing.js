@@ -6,7 +6,6 @@ function Landing() {
   return (
     <>
       <div id="box_atropos">
-
         <Atropos
           id="box"
           className="my-atropos"

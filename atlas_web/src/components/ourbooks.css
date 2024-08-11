@@ -1,0 +1,56 @@
+#bookssection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  height: 100vh;
+  min-height: 1200px;
+  width: 100%;
+  border-bottom: 4px white solid;
+  color: white;
+  font-family: "Century Gothic", monospace;
+  overflow-x: hidden;
+}
+
+#bookssection h1 {
+  text-transform: uppercase;
+  color: #fff;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+
+#booksbox {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 1100px;
+  gap: 30px;
+}
+
+.book-cover {
+  height: 430px;
+  width: 300px;
+}
