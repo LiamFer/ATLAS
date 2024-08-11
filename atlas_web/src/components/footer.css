@@ -1,0 +1,70 @@
+footer {
+  min-height: 190px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
+  color: white;
+}
+
+footer h3 {
+  color: #23c483;
+}
+
+#companybox {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#companybox h3 {
+  font-size: 30px;
+}
+
+#companybox div {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#companybox svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+#companybox svg:hover {
+  fill: #23c483;
+}
+
+#quicklinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#quicklinks a {
+  text-decoration: none;
+  color: white;
+}
+
+#devbox {
+  background-color: #23c483;
+  color: white;
+  font-size: 10px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 769px) {
+  #companybox {
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+}
