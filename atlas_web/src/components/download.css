@@ -6,7 +6,7 @@
   height: 100vh;
   min-height: 900px;
   width: 100%;
-  gap: 20px;
+  gap: 10px 280px;
   background-image: url(https://64.media.tumblr.com/e6ea224143f7a0fc5f2f5648e7ea8abe/tumblr_os68iuswWY1uob8tfo1_540.gif);
   background-size: cover;
   background-position: right;
@@ -33,6 +33,7 @@
   gap: 20px;
   align-items: center;
   justify-content: center;
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.26);
 }
 
 .download-box img {
@@ -49,8 +50,20 @@
   color: rgb(92, 92, 92);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
+  #app-section {
+    gap: 10px;
+  }
+
   .download-box {
-    width: 100px;
+    width: 300px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .download-box img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
   }
 }

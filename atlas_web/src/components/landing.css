@@ -40,7 +40,7 @@
   font-family: "Century Gothic", monospace;
 }
 
-/* CSS */
+/* Botão verde lá */
 .button-green {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -66,6 +66,15 @@
 
 .button-green:active {
   transform: translateY(-1px);
+}
+
+/* Removendo aquele efeito azul de quando clica em imagem tlgd */
+.button-green,
+.button-green:focus,
+.button-green:active {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Animações de entrada */
