@@ -109,6 +109,15 @@ nav.scrolled {
   display: none;
 }
 
+/* Removendo aquele efeito azul de quando clica em imagem tlgd */
+#mobile-menu,
+#mobile-menu:focus,
+#mobile-menu:active {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Versão mobile do menu */
 @media screen and (max-width: 769px) {
   #navbar {

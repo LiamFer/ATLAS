@@ -10,6 +10,7 @@
   border-bottom: 4px white solid;
   color: white;
   font-family: "Century Gothic", monospace;
+  overflow-x: hidden;
 }
 
 #container h1 {
@@ -26,9 +27,11 @@
   flex-direction: row;
 }
 
-#textbox {
-  width: 890px;
+#app-text-info {
+  width: 100%;
+  max-width: 890px;
   font-size: 25px;
+  padding: 0 20px;
 }
 
 .infocard {
@@ -78,7 +81,6 @@
   }
 }
 
-
 .infocard img {
   background-color: rgb(59, 207, 22);
   padding: 10px;
@@ -104,4 +106,68 @@
 }
 .infotext p {
   font-size: 15px;
+}
+
+/* Cards do Mobile */
+
+/* PC onde o Swiper some*/
+@media screen and (min-width: 900px) {
+  #swiper-container {
+    display: none;
+  }
+}
+
+/* Mobile onde o Swiper aparece */
+@media screen and (max-width: 900px) {
+  #infosbox {
+    display: none;
+  }
+
+  #app-text-info {
+    font-size: 15px;
+  }
+
+  .swiper-slide-active {
+    background-color: #21242a;
+  }
+
+  .swiper-slide:not(.swiper-slide-active) {
+    background: linear-gradient(45deg, #23c483, #1fd81f, #23c483, #1fd81f);
+    background-size: 400% 400%;
+    animation: rotate-border 3s linear infinite;
+  }
+
+  @keyframes rotate-border {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .infocard::before {
+    display: none;
+  }
+}
+
+.swiper {
+  width: 100%;
+  max-width: 240px;
+  height: 320px;
+  box-sizing: border-box;
+}
+
+.swiper-slide {
+  background-color: #21242a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
 }
