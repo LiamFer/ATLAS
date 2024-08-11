@@ -1,11 +1,13 @@
 import "./landing.css";
 import "atropos/css";
 import Atropos from "atropos/react";
+import Particles from "./Particles";
 
 function Landing() {
   return (
     <>
       <div id="box_atropos">
+        <Particles></Particles>
         <Atropos
           id="box"
           className="my-atropos"

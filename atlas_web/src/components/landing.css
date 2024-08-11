@@ -115,6 +115,8 @@
 @media screen and (max-width: 769px) {
   #box_atropos {
     background-size: cover;
+    background-attachment: scroll;
+
     background-position: center;
   }
   #box {
