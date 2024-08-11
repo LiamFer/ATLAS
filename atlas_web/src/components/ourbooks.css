@@ -15,8 +15,7 @@
 
 #bookssection h1 {
   text-transform: uppercase;
-  color: #fff;
-  animation: flicker 1.5s infinite alternate;
+  color: #;
 }
 
 @keyframes flicker {

@@ -4,6 +4,9 @@
   font-family: sans-serif;
   box-sizing: border-box;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 body {
   height: 300vh;

@@ -35,13 +35,13 @@ class Navbar extends Component {
               className={this.state.clicked ? "#navbar expand" : "#navbar"}
             >
               <li>
-                <a className="nav-link nav-link-grow-up">Home</a>
+                <a className="nav-link nav-link-grow-up" href="#box_atropos">Home</a>
               </li>
               <li>
-                <a className="nav-link nav-link-grow-up">About</a>
+                <a className="nav-link nav-link-grow-up" href="#container">About</a>
               </li>
               <li>
-                <a className="nav-link nav-link-grow-up">Download</a>
+                <a className="nav-link nav-link-grow-up" href="#app-section">Download</a>
               </li>
               <li>
                 <a className="nav-link nav-link-grow-up">Contact</a>

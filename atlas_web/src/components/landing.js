@@ -25,9 +25,7 @@ function Landing() {
                 Of Reading with <span>ATLAS</span>
               </h1>
             </div>
-            <button class="button-green" data-atropos-offset="6">
-              START NOW
-            </button>
+              <a className="button-green" href="#container" data-atropos-offset="6">START NOW</a>
           </div>
         </Atropos>
       </div>
