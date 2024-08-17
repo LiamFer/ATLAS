@@ -36,8 +36,12 @@ router.route("/readers/:userID").get((request, response) => {
 router.route("/readers").post((request, response) => {
   let user = { ...request.body };
   dataoperations.buildUser(user).then((result) => {
+    if (Array.isArray(result)) {
       // Resposta pro Client
       response.status(201).json(result);
+    } else {
+      response.status(400).send("User wasnt able to be created by the system.");
+    }
   });
 });
 

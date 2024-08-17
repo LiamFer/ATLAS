@@ -1,13 +1,18 @@
-var request = require("request");
+const axios = require("axios");
 const API = "http://localhost:8090/api/readers";
+
 let user = {
-  name: "usuario1",
-  email: "response",
-  password: "345",
+  name: "catchexception",
+  email: "except",
+  password: "48",
 };
 
-request.post(API, { json: user }, function (error, response, body) {
-  if (!error && response.statusCode == 201) {
-    console.log(body);
-  }
-});
+// Função pra inserir o usuário no Banco de dados chamando a API usando Promises
+axios
+  .post(API, user)
+  .then((response) => {
+    console.log(`STATUS CODE IS ${response.status}`);
+  })
+  .catch((error) => {
+    console.log(`ERROR ${error.response.status} - ${error.response.data}`);
+  });

@@ -37,9 +37,9 @@ async function buildUser(user) {
       .input("email", user.email)
       .input("password", user.password)
       .execute("insertNewReader");
-    return insertReader.rowsAffected;
+    return insertReader.recordsets;
   } catch (error) {
-    console.log(error);
+    return error
   }
 }
 
