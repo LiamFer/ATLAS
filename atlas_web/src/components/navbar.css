@@ -119,7 +119,7 @@ nav.scrolled {
 }
 
 /* Versão mobile do menu */
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 930px) {
   #navbar {
     display: flex;
     flex-direction: column;

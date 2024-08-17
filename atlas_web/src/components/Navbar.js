@@ -46,6 +46,9 @@ class Navbar extends Component {
               <li>
                 <a className="nav-link nav-link-grow-up">Contact</a>
               </li>
+              <li>
+                <a className="nav-link nav-link-grow-up">Sign Up</a>
+              </li>
             </ul>
           </div>
 
