@@ -36,7 +36,8 @@ router.route("/readers/:userID").get((request, response) => {
 router.route("/readers").post((request, response) => {
   let user = { ...request.body };
   dataoperations.buildUser(user).then((result) => {
-    response.status(201).json(result);
+      // Resposta pro Client
+      response.status(201).json(result);
   });
 });
 
