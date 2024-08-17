@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", router);
 
+// Routes ------------------------------
+
 // Primeira Route a ser executada antes das outras
 router.use((request, response, next) => {
   console.log("alalala");
@@ -36,8 +38,8 @@ router.route("/readers/:userID").get((request, response) => {
 router.route("/readers").post((request, response) => {
   let user = { ...request.body };
   dataoperations.buildUser(user).then((result) => {
+    // Resposta pro Client
     if (Array.isArray(result)) {
-      // Resposta pro Client
       response.status(201).json(result);
     } else {
       response.status(400).send("User wasnt able to be created by the system.");

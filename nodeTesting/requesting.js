@@ -3,8 +3,7 @@ const API = "http://localhost:8090/api/readers";
 
 let user = {
   name: "catchexception",
-  email: "except",
-  password: "48",
+  email: "except"
 };
 
 // Função pra inserir o usuário no Banco de dados chamando a API usando Promises
