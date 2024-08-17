@@ -18,12 +18,21 @@ router.use((request, response, next) => {
   next();
 });
 
-// Quando o cara for
+
 router.route("/readers").get((request, response) => {
   dataoperations.getUsers().then((result) => {
     response.json(result[0])
   });
 });
+
+// Quando o cara for
+router.route("/readers/:userID").get((request, response) => {
+  dataoperations.getUser(request.params.userID).then((result) => {
+    response.json(result[0])
+  });
+});
+
+
 
 let port = process.env.PORT || 8090;
 app.listen(port);
