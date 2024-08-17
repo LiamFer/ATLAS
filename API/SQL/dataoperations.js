@@ -2,7 +2,6 @@
 let configuration = require("./sqlconfig");
 const sql = require("mssql");
 
-
 // Função que retorna todos os Leitores registrados
 async function getUsers() {
   try {
@@ -18,17 +17,34 @@ async function getUsers() {
 async function getUser(userID) {
   try {
     let db = await sql.connect(configuration);
-    let reader = await db.request().input("userID",userID).query("SELECT * FROM readers WHERE id = @userID");
+    let reader = await db
+      .request()
+      .input("userID", userID)
+      .query("SELECT * FROM readers WHERE id = @userID");
     return reader.recordsets;
   } catch (error) {
     console.log(error);
   }
 }
 
-// Função pra adicionar um novo usuário no Banco
-
+// Função pra adicionar um novo usuário no Banco usando uma Stored Procedure
+async function buildUser(user) {
+  try {
+    let db = await sql.connect(configuration);
+    let insertReader = await db
+      .request()
+      .input("name", user.name)
+      .input("email", user.email)
+      .input("password", user.password)
+      .execute("insertNewReader");
+    return insertReader.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = {
   getUsers: getUsers,
   getUser: getUser,
+  buildUser: buildUser,
 };

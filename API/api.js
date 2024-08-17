@@ -18,21 +18,27 @@ router.use((request, response, next) => {
   next();
 });
 
-
+// Request pra voltar todos os leitores no Banco de dados
 router.route("/readers").get((request, response) => {
   dataoperations.getUsers().then((result) => {
-    response.json(result[0])
+    response.json(result[0]);
   });
 });
 
-// Quando o cara for
+// Request pra conseguir informações sobre um leitor especifico
 router.route("/readers/:userID").get((request, response) => {
   dataoperations.getUser(request.params.userID).then((result) => {
-    response.json(result[0])
+    response.json(result[0]);
   });
 });
 
-
+// POST pra inserir info no banco
+router.route("/readers").post((request, response) => {
+  let user = { ...request.body };
+  dataoperations.buildUser(user).then((result) => {
+    response.status(201).json(result);
+  });
+});
 
 let port = process.env.PORT || 8090;
 app.listen(port);
