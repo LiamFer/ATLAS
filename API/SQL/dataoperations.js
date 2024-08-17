@@ -25,6 +25,9 @@ async function getUser(userID) {
   }
 }
 
+// Função pra adicionar um novo usuário no Banco
+
+
 module.exports = {
   getUsers: getUsers,
   getUser: getUser,

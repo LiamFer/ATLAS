@@ -1,5 +1,5 @@
-const dataoperations = require("./dataoperations");
-let User = require("./user");
+const dataoperations = require("./SQL/dataoperations");
+let User = require("./src/user");
 
 // Criando a API com express e configurando
 let express = require("express");
