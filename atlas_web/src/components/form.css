@@ -22,6 +22,7 @@
   justify-content: center;
   gap: 20px;
   height: 500px;
+  text-align: center;
 }
 
 #form_imagebox {
@@ -121,18 +122,18 @@
   right: 5px;
 }
 
-#form {
-  text-align: center;
-}
-
 #form p {
-  color: rgba(206, 46, 46, 0.911);
+  color: #ce2e2ee8;
   font-size: 0.8em;
   letter-spacing: 2px;
 }
 
 #closeform:hover {
   fill: #38ef7eb4;
+}
+
+#submitbtn {
+  border: 2px solid #38ef7eb4;
 }
 
 .slide-in-blurred-bottom {
@@ -178,5 +179,31 @@
     -webkit-filter: blur(0);
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  #form {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    padding: 0px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  #formfields {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    height: 100%;
+  }
+
+  #form_imagebox {
+    display: none;
   }
 }
