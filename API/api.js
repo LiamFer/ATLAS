@@ -35,9 +35,8 @@ router.route("/readers/:userID").get((request, response) => {
 });
 
 // Conferir se já existe usuário com esse email cadastrado
-router.route("/checkemail").get((request, response) => {
-  let user = { ...request.body };
-  dataoperations.checkEmail(user).then((result) => {
+router.route("/checkemail/:email").get((request, response) => {
+  dataoperations.checkEmail(request.params.email).then((result) => {
     // Resposta pro Client
     if (Array.isArray(result)) {
       // Email existindo ou não voltara aqui
