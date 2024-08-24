@@ -28,8 +28,9 @@ async function getUser(userID) {
 }
 
 // Função pra conferir se o usuário já existe e está cadastrado
-async function checkUser(user) {
+async function checkEmail(user) {
   try {
+    if (user.email == undefined) {throw new Error('Email is undefined')}
     let db = await sql.connect(configuration);
     let findUser = await db
       .request()
@@ -37,7 +38,7 @@ async function checkUser(user) {
       .query("SELECT COUNT(*) FROM readers WHERE email = @email");
     return findUser.recordsets;
   } catch (error) {
-    return error
+    return error;
   }
 }
 
@@ -53,7 +54,7 @@ async function buildUser(user) {
       .execute("insertNewReader");
     return insertReader.recordsets;
   } catch (error) {
-    return error
+    return error;
   }
 }
 
@@ -61,4 +62,5 @@ module.exports = {
   getUsers: getUsers,
   getUser: getUser,
   buildUser: buildUser,
+  checkEmail: checkEmail,
 };

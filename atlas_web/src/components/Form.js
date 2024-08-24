@@ -1,5 +1,5 @@
 import "./form.css";
-import sendPOST from "../API/comunication";
+import {sendPOST,checkEmail} from "../API/comunication";
 
 // Função pra alterar o evento padrão do Form e eu conseguir enviar os dados
 function buildInfo(event) {

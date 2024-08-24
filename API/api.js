@@ -34,10 +34,18 @@ router.route("/readers/:userID").get((request, response) => {
   });
 });
 
-//
-router.route("/readers/:userID").get((request, response) => {
-  dataoperations.getUser(request.params.userID).then((result) => {
-    response.json(result[0]);
+// Conferir se já existe usuário com esse email cadastrado
+router.route("/checkemail").get((request, response) => {
+  let user = { ...request.body };
+  dataoperations.checkEmail(user).then((result) => {
+    // Resposta pro Client
+    if (Array.isArray(result)) {
+      // Email existindo ou não voltara aqui
+      response.status(200).json(result[0][0]['']);
+    } else {
+      // Em caso de erro
+      response.status(400).send(result.message);
+    }
   });
 });
 
@@ -49,7 +57,7 @@ router.route("/readers").post((request, response) => {
     if (Array.isArray(result)) {
       response.status(201).json(result);
     } else {
-      response.status(400).send("User wasnt able to be created by the system.");
+      response.status(400).send("User wasnt able to be created by the system. " + result);
     }
   });
 });
