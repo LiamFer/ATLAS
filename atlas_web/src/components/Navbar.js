@@ -1,6 +1,8 @@
 import "./navbar.css";
 import { Component } from "react";
 import { Divide as Hamburger } from "hamburger-react";
+import Form from "./Form";
+import ReactDOM from "react-dom/client";
 
 class Navbar extends Component {
   state = { clicked: false, scrolled: false };
@@ -35,19 +37,36 @@ class Navbar extends Component {
               className={this.state.clicked ? "#navbar expand" : "#navbar"}
             >
               <li>
-                <a className="nav-link nav-link-grow-up" href="#box_atropos">Home</a>
+                <a className="nav-link nav-link-grow-up" href="#box_atropos">
+                  Home
+                </a>
               </li>
               <li>
-                <a className="nav-link nav-link-grow-up" href="#container">About</a>
+                <a className="nav-link nav-link-grow-up" href="#container">
+                  About
+                </a>
               </li>
               <li>
-                <a className="nav-link nav-link-grow-up" href="#app-section">Download</a>
+                <a className="nav-link nav-link-grow-up" href="#app-section">
+                  Download
+                </a>
               </li>
               <li>
                 <a className="nav-link nav-link-grow-up">Contact</a>
               </li>
               <li>
-                <a className="nav-link nav-link-grow-up">Sign Up</a>
+                <a
+                  onClick={() => {
+                    const formBox = document.createElement("div");
+                    formBox.id = "formbox";
+                    document.body.appendChild(formBox);
+                    const root = ReactDOM.createRoot(formBox);
+                    root.render(<Form />);
+                  }}
+                  className="nav-link nav-link-grow-up"
+                >
+                  Sign Up
+                </a>
               </li>
             </ul>
           </div>
