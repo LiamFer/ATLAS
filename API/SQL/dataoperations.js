@@ -27,6 +27,20 @@ async function getUser(userID) {
   }
 }
 
+// Função pra conferir se o usuário já existe e está cadastrado
+async function checkUser(user) {
+  try {
+    let db = await sql.connect(configuration);
+    let findUser = await db
+      .request()
+      .input("email", user.email)
+      .query("SELECT COUNT(*) FROM readers WHERE email = @email");
+    return findUser.recordsets;
+  } catch (error) {
+    return error
+  }
+}
+
 // Função pra adicionar um novo usuário no Banco usando uma Stored Procedure
 async function buildUser(user) {
   try {

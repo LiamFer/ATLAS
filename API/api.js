@@ -34,6 +34,13 @@ router.route("/readers/:userID").get((request, response) => {
   });
 });
 
+//
+router.route("/readers/:userID").get((request, response) => {
+  dataoperations.getUser(request.params.userID).then((result) => {
+    response.json(result[0]);
+  });
+});
+
 // POST pra inserir info no banco
 router.route("/readers").post((request, response) => {
   let user = { ...request.body };
