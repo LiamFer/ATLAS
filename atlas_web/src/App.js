@@ -4,16 +4,18 @@ import Aboutapp from "./components/Aboutapp";
 import Ourbooks from "./components/Ourbooks";
 import Download from "./components/Download";
 import Footer from "./components/Footer";
+import Form from "./components/Form";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar />
       <Landing />
       <Aboutapp />
       <Ourbooks />
       <Download />
-      <Footer />
+      <Footer /> */}
+      <Form />
     </div>
   );
 }
