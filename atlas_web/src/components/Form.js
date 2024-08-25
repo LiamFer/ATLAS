@@ -10,32 +10,38 @@ function buildInfo(event) {
 
   // A função de check validation retorna uma Promise
   const validation = checkEmail(userJSON.email);
-  validation.then((result) => {
-    // Aqui tenho 3 caminhos a seguir:
-    // 1. Valor é 0 = Posso criar
-    // 2. Valor >0 = Mensagem de email utilizado
-    // 3. Valor é Exception = Popup de Erro
-    console.log(result);
-    if (result == 0) {
-      // sendPOST retorna uma Promise, com base nela decido o que fazer na Tela
-      const response = sendPOST(userJSON);
-      response.then((data) => {
-        console.log(`THE RESPONSE CODE IS ${data}...`);
-        feedback.textContent = "*Usuário criado com Sucesso!";
-        feedback.style.color = "#23c483";
-      });
-    } else if (result == 1) {
-      // Caso já estejam usando o e-mail
-      console.log("Usuário já cadastrado");
-      feedback.textContent = "*Email já está sendo utilizado.";
+  validation
+    .then((result) => {
+      // Aqui tenho 3 caminhos a seguir:
+      // 1. Valor é 0 = Posso criar
+      // 2. Valor >0 = Mensagem de email utilizado
+      // 3. Valor é Exception = Popup de Erro
+      console.log(result);
+      if (result == 0) {
+        // sendPOST retorna uma Promise, com base nela decido o que fazer na Tela
+        const response = sendPOST(userJSON);
+        response.then((data) => {
+          console.log(`THE RESPONSE CODE IS ${data}...`);
+          feedback.textContent = "*Usuário criado com Sucesso!";
+          feedback.style.color = "#23c483";
+        });
+      } else if (result == 1) {
+        // Caso já estejam usando o e-mail
+        console.log("Usuário já cadastrado");
+        feedback.textContent = "*Email já está sendo utilizado.";
+        feedback.style.color = "#ce2e2ee8";
+      } else {
+        // Popup de erro por causa do status code
+        console.log("Deu zika pae kkkk");
+        feedback.textContent = "*Ops um Erro aconteceu!";
+        feedback.style.color = "#ce2e2ee8";
+      }
+    })
+    .catch((error) => {
+      // Aqui cai caso a API esteja OFF ou deu algum problema no lado do Servidor
+      feedback.textContent = "Não foi possível comunicar com o Servidor!";
       feedback.style.color = "#ce2e2ee8";
-    } else {
-      // Popup de erro por causa do status code
-      console.log("Deu zika pae kkkk");
-      feedback.textContent = "*Ops um Erro aconteceu!";
-      feedback.style.color = "#ce2e2ee8";
-    }
-  });
+    });
   // Conferindo como prosseguir com base no checkEmail
 }
 
@@ -48,7 +54,7 @@ function Form() {
     <>
       {/* Aprendi que o Form envia no padrão pra API receber já, só identificar os inputs com o 'name'*/}
 
-      <form id="form" onSubmit={buildInfo} className="slide-in-blurred-bottom">
+      <form id="form" onSubmit={buildInfo} className="slide-in-blurred-bottom" autocomplete="off">
         <div id="form_imagebox"></div>
         <div id="formfields">
           <h2>create account</h2>
@@ -61,6 +67,7 @@ function Form() {
               name="name"
               id="name"
               required
+              autocomplete="off"
             />
             <label for="name" className="form__label">
               Name
@@ -75,6 +82,7 @@ function Form() {
               name="email"
               id="email"
               required
+              autocomplete="off"
             />
             <label for="email" className="form__label">
               Email
@@ -89,6 +97,7 @@ function Form() {
               name="password"
               id="password"
               required
+              autocomplete="off"
             />
             <label for="password" className="form__label">
               Password
