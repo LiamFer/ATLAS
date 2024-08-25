@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             AtlasTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "wORLDd",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
