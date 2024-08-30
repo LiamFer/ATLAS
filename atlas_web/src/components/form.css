@@ -208,4 +208,8 @@
   #form_imagebox {
     display: none;
   }
+
+  #closeform {
+    top: 155px;
+  }
 }
